@@ -9,7 +9,6 @@
 <link rel="stylesheet" href="index.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
-	<script src="main.js"></script>
     <meta name="generator" content="Nicepage 6.19.6, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     
@@ -28,7 +27,29 @@
     <meta property="og:title" content="Page 3">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script>
+// Attach a submit handler to the form
+$( "#searchForm" ).on( "submit", function( event ) {
+ 
+  // Stop form from submitting normally
+  event.preventDefault();
+ 
+  // Get some values from elements on the page:
+  var $form = $( this ),
+    term = $form.find( "input[name='s']" ).val(),
+    url = $form.attr( "action" );
+ 
+  // Send the data using post
+  var posting = $.post( 'https://hooks.uk.webexconnect.io/events/DWL82W540R', { text: welcherkaffee } );
+ 
+  // Put the results in a div
+  posting.done(function( data ) {
+    var content = $( data ).find( "#content" );
+    $( "#result" ).empty().append( content );
+  } );
+} );
+</script><meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
   <body data-home-page="Page-3.html" data-home-page-title="Page 3" data-path-to-root="./" data-include-products="false" class="u-body u-image u-xl-mode" data-lang="en" style="background-position: 50% 50%; background-image: url(&quot;images/IMG_45772.jpeg&quot;);"><header class="u-clearfix u-header u-header" id="sec-acce"><div class="u-clearfix u-sheet u-sheet-1">
         <img class="u-image u-image-contain u-image-default u-image-1" src="images/cisco-logo.png" alt="" data-image-width="300" data-image-height="158">
         <h1 class="u-text u-text-body-alt-color u-text-1">ORGATEC / CISCO Kiosk example </h1>
@@ -46,7 +67,7 @@
                 <div class="custom-expanded u-container-style u-dialog-link u-group u-opacity u-opacity-70 u-palette-5-light-1 u-shape-rectangle u-group-1" data-href="#sec-f83a">
                   <div class="u-container-layout u-container-layout-2">
                     <p class="u-text u-text-1">Raumbuchung</p>
-                    <p class="u-text u-text-default u-text-2">hhhier können Sie einsehen welche Arbeitsplätze und Räume Ihnen zur Verfügung stehen und diese direkt buchen </p>
+                    <p class="u-text u-text-default u-text-2">hier können Sie einsehen welche Arbeitsplätze und Räume Ihnen zur Verfügung stehen und diese direkt buchen </p>
                   </div>
                 </div>
               </div>
@@ -56,7 +77,7 @@
                 <img class="custom-expanded u-image u-image-default u-image-2" src="images/virt_Rec.png" alt="" data-image-width="823" data-image-height="706">
                 <div class="custom-expanded u-container-style u-group u-opacity u-opacity-70 u-palette-5-light-1 u-shape-rectangle u-group-2" data-href="sip:mebert@cisco.com">
                   <div class="u-container-layout u-container-layout-4">
-                    <p class="u-text u-text-3">virtuele Rezeption</p>
+                    <p class="u-text u-text-3">virtuelle Rezeption</p>
                     <p class="u-text u-text-default u-text-4">Sie können mich Jederzeit anrufen während meine Kollegen nicht zur verfügung stehen, Ich helfe Ihnen gerne weiter</p>
                   </div>
                 </div>
@@ -91,7 +112,7 @@
             <div class="u-layout-row">
               <div class="u-container-style u-layout-cell u-size-60 u-layout-cell-1">
                 <div class="u-container-layout u-container-layout-9">
-                  <div class="u-container-style u-dialog-link u-expanded-width u-group u-opacity u-opacity-70 u-palette-5-light-1 u-shape-rectangle u-group-5" data-href="#sec-f83a">
+                  <div class="u-container-style u-expanded-width u-group u-opacity u-opacity-70 u-palette-5-light-1 u-shape-rectangle u-group-5" data-href="#">
                     <div class="u-container-layout u-container-layout-10">
                       <p class="u-text u-text-9">Kiosk Systeme</p>
                       <p class="u-text u-text-black u-text-default u-text-10">Kiosk Systeme die Individuell betrieben werden erhöhen nicht nur die Servicequalität, sondern optimieren Personaleinsatz.<br>Die Gestaltung kann im individuellen Corporate Design erfolgen.
@@ -112,14 +133,6 @@
     
     
     
-    <section class="u-backlink u-clearfix u-grey-80">
-      <p class="u-text">
-        <span>This site was created with the </span>
-        <a class="u-link" href="https://nicepage.com/" target="_blank" rel="nofollow">
-          <span>Nicepage</span>
-        </a>
-      </p>
-    </section>
   <section class="u-align-center u-black u-clearfix u-container-align-center u-container-style u-dialog-block u-opacity u-opacity-70 u-dialog-section-5" id="sec-58a9">
       <div class="u-align-center u-container-align-center u-container-style u-custom-color-2 u-dialog u-dialog-1">
         <div class="u-container-layout u-container-layout-1">
@@ -199,7 +212,7 @@
   text-transform: uppercase;
   font-size: 0.875rem;
   letter-spacing: 1px;
-  margin: 356px 71px 0 auto;
+  margin: 357px 97px 0 auto;
   padding: 9px 136px 11px 134px;
 }
 
@@ -354,15 +367,15 @@
     width: 340px;
   }
 }</style><section class="u-black u-clearfix u-container-style u-dialog-block u-opacity u-opacity-70 u-dialog-section-7" id="sec-e550">
-      <div class="u-align-center u-container-style u-dialog u-white u-dialog-1">
+      <div class="u-align-center u-container-align-center u-container-style u-dialog u-white u-dialog-1">
         <div class="u-container-layout u-container-layout-1">
           <div class="u-container-style u-custom-color-5 u-group u-group-1">
             <div class="u-container-layout u-container-layout-2">
-              <a href="#" img class="u-expanded-height u-image u-image-default u-image-1" src="images/Microsoft-teams.jpg" alt="" data-image-width="834" data-image-height="776" id="initialize-teams-call-agent"></a>
+              <img class="u-expanded-height u-image u-image-default u-image-1" src="images/Microsoft-teams.jpg" alt="" data-image-width="834" data-image-height="776">
             </div>
           </div>
-          <h1 class="u-text u-text-default u-text-1">under contruction</h1>
-          <a href="#" id="start-call-button"" class="u-border-none u-btn u-btn-round u-button-style u-custom-color-5 u-hover-palette-1-base u-radius u-btn-1"><span class="u-icon"><svg class="u-svg-content" viewBox="0 0 513.64 513.64" x="0px" y="0px" style="width: 1em; height: 1em;"><path d="M499.66,376.96l-71.68-71.68c-25.6-25.6-69.12-15.359-79.36,17.92c-7.68,23.041-33.28,35.841-56.32,30.72 c-51.2-12.8-120.32-79.36-133.12-133.12c-7.68-23.041,7.68-48.641,30.72-56.32c33.28-10.24,43.52-53.76,17.92-79.36l-71.68-71.68 c-20.48-17.92-51.2-17.92-69.12,0l-48.64,48.64c-48.64,51.2,5.12,186.88,125.44,307.2c120.32,120.32,256,176.641,307.2,125.44 l48.64-48.64C517.581,425.6,517.581,394.88,499.66,376.96z"></path></svg></span>&nbsp;Start Call
+          <h1 class="u-text u-text-default u-text-1">Gerade ist kein Agent in der IT Hotline angemeldet </h1>
+          <a href="#" class="u-border-none u-btn u-btn-round u-button-style u-custom-color-5 u-hover-palette-1-base u-radius u-btn-1"><span class="u-icon"><svg class="u-svg-content" viewBox="0 0 513.64 513.64" x="0px" y="0px" style="width: 1em; height: 1em;"><path d="M499.66,376.96l-71.68-71.68c-25.6-25.6-69.12-15.359-79.36,17.92c-7.68,23.041-33.28,35.841-56.32,30.72 c-51.2-12.8-120.32-79.36-133.12-133.12c-7.68-23.041,7.68-48.641,30.72-56.32c33.28-10.24,43.52-53.76,17.92-79.36l-71.68-71.68 c-20.48-17.92-51.2-17.92-69.12,0l-48.64,48.64c-48.64,51.2,5.12,186.88,125.44,307.2c120.32,120.32,256,176.641,307.2,125.44 l48.64-48.64C517.581,425.6,517.581,394.88,499.66,376.96z"></path></svg></span>&nbsp;Start Call
           </a>
           <a href="#" class="u-align-right u-border-none u-btn u-btn-round u-button-style u-custom-color-7 u-hover-custom-color-5 u-radius u-btn-2"><span class="u-file-icon u-icon u-text-black u-icon-2"><img src="images/7849884-aa024ca8.png" alt=""></span>&nbsp;Beende​n
           </a>
@@ -398,7 +411,7 @@
 }
 
 .u-dialog-section-7 .u-text-1 {
-  margin: 397px 516px 0 auto;
+  margin: 330px auto 0 260px;
 }
 
 .u-dialog-section-7 .u-btn-1 {
@@ -406,7 +419,7 @@
   text-transform: uppercase;
   font-size: 0.875rem;
   background-image: none;
-  margin: 269px auto 0 644px;
+  margin: 336px auto 0 644px;
   padding: 22px 27px 22px 26px;
 }
 
@@ -443,7 +456,7 @@
 
   .u-dialog-section-7 .u-text-1 {
     margin-top: 541px;
-    margin-right: 387px;
+    margin-left: 260px;
   }
 
   .u-dialog-section-7 .u-btn-1 {
@@ -468,7 +481,7 @@
   }
 
   .u-dialog-section-7 .u-text-1 {
-    margin-right: 232px;
+    margin-left: 156px;
   }
 
   .u-dialog-section-7 .u-btn-1 {
@@ -476,6 +489,7 @@
   }
 
   .u-dialog-section-7 .u-btn-2 {
+    margin-top: -54px;
     margin-left: 0;
   }
 }
@@ -496,7 +510,6 @@
 
   .u-dialog-section-7 .u-text-1 {
     margin-top: 522px;
-    margin-right: 174px;
   }
 
   .u-dialog-section-7 .u-btn-1 {
@@ -514,7 +527,7 @@
   }
 
   .u-dialog-section-7 .u-text-1 {
-    margin-right: 110px;
+    margin-left: 98px;
   }
 
   .u-dialog-section-7 .u-btn-1 {
